@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #image-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #predicted-image {
+            max-width: 400px;
+        }
+        #result {
+            margin-top: 50px;
+            text-align: center;
+        }
+        #back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Prediction Result</h1>
+    <div id="image-container">
+        <img id="predicted-image" src="data:image/jpeg;base64,{{ image }}" alt="Predicted Image">
+    </div>
+    <div id="result">
+        <h2>Prediction:</h2>
+        <p>{{ results[0].label }}</p>
+        <p>Probability: {{ '%.2f' % results[0].probability }}</p>
+    </div>
+    <div style="text-align: center;">
+        <input type="button" value="Back" id="back-button" onclick="goBack()">
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

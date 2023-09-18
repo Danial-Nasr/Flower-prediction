@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #upload-form {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #upload-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Classification</h1>
+    <div id="upload-form">
+        <form id="image-form" enctype="multipart/form-data" action="{{ url_for('classify') }}" method="post">
+            <input type="file" name="image" accept="image/*">
+            <br><br>
+            <input type="submit" value="Prediction" id="upload-button">
+        </form>
+    </div>
+</body>
+</html>
